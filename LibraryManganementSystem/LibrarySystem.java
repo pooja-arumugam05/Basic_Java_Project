@@ -90,22 +90,15 @@ class Faculty extends User {
 
 public class LibrarySystem {
     public static void main(String[] args) {
-        // Create users
         Student student = new Student("Pooja", "S101");
         Faculty faculty = new Faculty("Dr. Arun", "F202");
-
-        // Create books
         DigitalBook db = new DigitalBook("Java Basics", "James Gosling");
         PhysicalBook pb = new PhysicalBook("OOP Concepts", "Grady Booch");
-
-        // Borrow logic
         borrowBook(student, db);
         borrowBook(faculty, pb);
-        borrowBook(faculty, db); // Already borrowed
-
-        // Returning the book manually for testing
+        borrowBook(faculty, db); 
         db.setAvailability(true);
-        borrowBook(faculty, db); // Now possible again
+        borrowBook(faculty, db); 
     }
 
     public static void borrowBook(User user, Book book) {
